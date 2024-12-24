@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html id="main" lang="en">
+    <head>
+        <title>Sanat Khurana</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <script src="typewriter.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="images/dark.webp" alt="My Profile Image" class="theme-icon" id="theme-icon" width="30" height="30">
+        </div>
+        <div class="flex-parent">
+            <div class="row">
+                <div class="col1">
+                    <img src="images/me.webp" alt="An image of me" class="profile">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="https://github.com/sanatkhurana" target="_blank">
+                                    <img src="images/git.webp" alt="GitHub" class="logo" >
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.linkedin.com/in/sanat-khurana-a97b29135" target="_blank">
+                                    <img src="images/linkedin.webp" alt="LinkedIn" class="logo" >
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.instagram.com/sanat.khurana" target="_blank">
+                                    <img src="images/insta.webp" alt="Insta" class="logo" >
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.facebook.com/p/Sanat-Khurana-100009353304971" target="_blank">
+                                    <img src="images/fb.webp" alt="Facebook" class="logo" >
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col2">
+                    <h1>Hello, I'm <span class="emphasize">Sanat</span> <span>&#x1F44B;</span></h1>
+                    <p>
+                        I’m currently an MBA candidate at Yale SOM, with experience 
+                        in SWDev@Oracle and TPM@eBay.
+                        <br><br>
+                        I love keeping up with news through TechCrunch, WSJ and NYT.
+                        <br><br>
+                        In my free time, I enjoy 
+                        <span class="typewriter" id="hobbies"></span><br><br><br>
+                        <a href="mailto:sanat.khurana@yale.edu" class="rounded-button">Connect via email</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            /* setup hobbies */
+            hobbies = `["building things.", 
+                        "playing squash.", 
+                        "hanging out with friends.", 
+                        "learning mathematical card tricks.", 
+                        "coding.",
+                        "watching Bollywood movies."]`
+
+            document.getElementById('hobbies').setAttribute('twlist', hobbies);
+
+            /* init typewriter */
+            window.onload = initTypewriter();    
+            
+            /* dark and light mode setup */
+            let main = document.getElementById("main");
+            let themeToggle = document.getElementById("theme-icon");
+
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                main.setAttribute("class", "dark");
+                themeToggle.setAttribute("src", "images/light.png");
+            } else {
+                main.setAttribute("class", "light");
+                themeToggle.setAttribute("src", "images/dark.webp");
+            }
+
+            themeToggle.addEventListener("click", function() {
+                let root = document.documentElement;
+                if (main.getAttribute("class") == "light") {
+                    main.setAttribute("class", "dark");
+                    themeToggle.setAttribute("src", "images/light.png");
+                } else {
+                    main.setAttribute("class", "light");
+                    themeToggle.setAttribute("src", "images/dark.webp");
+                }
+            })
+        </script>
+    </body>
+</html>
