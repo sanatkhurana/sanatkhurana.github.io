@@ -120,7 +120,7 @@ td {
     background-color: #0567bc;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) or (max-device-width: 600px) {
     .row {
         display: flex;
         flex-direction: column;
